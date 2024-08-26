@@ -1,0 +1,14 @@
+# COMMON
+common --color=yes
+common --enable_bzlmod=false
+
+# BUILD
+build --spawn_strategy=local
+build --verbose_failures
+build --color=yes
+build --java_language_version=11
+build --java_runtime_version=11
+build --cxxopt=-std=c++14
+build --host_cxxopt=-std=c++14
+build --strategy=Scalac=worker
+build --worker_sandboxing

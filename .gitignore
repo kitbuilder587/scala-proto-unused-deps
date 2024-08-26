@@ -1,0 +1,16 @@
+.DS_Store
+.bazelbsp
+.vscode
+.history
+out
+
+/.bloop
+/.bsp
+/.ensime
+/.idea
+/.ijwb/*
+.metals
+/bazel*
+
+# bsp
+projectview.bazelproject
