@@ -100,3 +100,15 @@ custom_scala_repositories(
 )
 
 scala_register_toolchains()
+
+mezel_version = "release-v0.2.7"
+http_archive(
+    name = "mezel",
+    # sha256 = "da056c9bf1ddd8edd2670f0d0e645a8d8deadcd2638676e3b48498083ddace41",
+    strip_prefix = "mezel-%s" % mezel_version,
+    type = "zip",
+    url = "https://github.com/valdemargr/mezel/archive/%s.zip" % mezel_version,
+)
+# loads the bsp binary
+load("@mezel//rules:load_mezel.bzl", "load_mezel")
+load_mezel()
