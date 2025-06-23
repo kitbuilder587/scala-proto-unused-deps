@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package example;
+
+// A very small data structure for demo purposes.
+message Greeting {
+  string text  = 1;  // e.g. "Hello, world!"
+  string from  = 2;  // sender’s name
+}

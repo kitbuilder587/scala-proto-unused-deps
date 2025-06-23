@@ -33,14 +33,10 @@ artifacts = (
 
 fs2_213 = [
     "@maven//:co_fs2_fs2_core_2_13",
-    "@maven//:co_fs2_fs2_io_2_13",
-    "@maven//:co_fs2_fs2_reactive_streams_2_13",
 ]
 
 fs2_3 = [
     "@maven//:co_fs2_fs2_core_3",
-    "@maven//:co_fs2_fs2_io_3",
-    "@maven//:co_fs2_fs2_reactive_streams_3",
 ]
 
 core_base_deps_213 = []

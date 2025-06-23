@@ -12,12 +12,13 @@ package(
     setup_scala_toolchain(
         name = "scala_toolchain" + version_suffix(scala_version),
         dependency_mode = "transitive",
+        dependency_tracking_method = "high-level",
         enable_diagnostics_report = True,
         enable_semanticdb = True,
         scala_version = scala_version,
         scalac_jvm_flags = ["-Xss1G"],
         strict_deps_mode = "off",
-        unused_dependency_checker_mode = "off",
+        unused_dependency_checker_mode = "error",
         use_argument_file_in_runner = True,
     )
     for scala_version in SCALA_VERSIONS

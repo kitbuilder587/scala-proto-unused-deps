@@ -6,6 +6,10 @@ load(
 )
 load("@io_bazel_rules_scala//scala:scala_cross_version_select.bzl", "select_for_scala_version")
 load(
+    "@io_bazel_rules_scala//scala_proto:scala_proto.bzl",
+    _scala_proto_library = "scala_proto_library",
+)
+load(
     "//settings:dependencies.bzl",
     _base_deps_213 = "base_deps_213",
     _base_deps_3 = "base_deps_3",
@@ -52,6 +56,7 @@ _default_scala2_plugins = []
 
 def _scala_module_deps(modules, suffix):
     return [m + suffix for m in modules]
+
 # Same as `scala_module` but with minimal 3d party dependency set
 def scala_core_module(
         name,
@@ -249,3 +254,16 @@ def scala_binary(
         scala_version = scala_version,
     )
 
+def scala_proto_library(name, visibility, deps, **kwargs):
+    _scala_proto_library(
+        name = name + "_impl",
+        visibility = visibility,
+        deps = deps,
+    )
+
+    upstream_lib(
+        name = name,
+        visibility = visibility,
+        deps = [":" + name + "_impl"],
+        scala_version = "2.13.14",
+    )
