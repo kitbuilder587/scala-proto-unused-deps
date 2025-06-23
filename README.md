@@ -1,1 +1,1 @@
-Bazel example with cross-compilation to Scala 2/3
+Repo reproducing unused deps for rules_scala [issue](https://github.com/bazel-contrib/rules_scala/issues/1750)
